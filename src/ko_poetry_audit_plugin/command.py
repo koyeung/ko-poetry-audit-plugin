@@ -30,7 +30,6 @@ class AuditCommand(GroupCommand):
 
         auditor = Auditor(self.poetry, self.io)
         auditor.only_groups(list(self.activated_groups))
-        auditor.audit(Path.cwd(), output or self.io)
 
-        # return exit code
-        return 0
+        result = auditor.audit(Path.cwd(), output or self.io)
+        return 0 if result else 1
