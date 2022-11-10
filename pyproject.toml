@@ -1,0 +1,68 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "ko-poetry-audit-plugin"
+version = "0.1.0"
+description = "Poetry plugin to check known vulnerabilities from poetry.lock"
+authors = ["YEUNG King On <koyeung@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+packages = [{include = "ko_poetry_audit_plugin", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+poetry = "^1.2.2"
+httpx = {extras = ["http2"], version = "^0.23.0"}
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.15.5"
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
+coverage = {extras = ["toml"], version = "^6.5.0"}
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+# match line_length with black
+line_length = 88
+
+[tool.pylint.main]
+# Good variable names which should always be accepted, separated by a comma.
+good-names = ["i", "j", "k", "ex", "Run", "_", "fp"]
+
+[tool.pylint."messages control"]
+# Disable the message, report, category or checker with the given id(s). You can
+# either give multiple identifiers separated by comma (,) or put this option
+# multiple times (only on the command line, not in the configuration file where
+# it should appear only once). You can also use "--disable=all" to disable
+# everything first and then re-enable specific checks. For example, if you want
+# to run only the similarities checker, you can use "--disable=all
+# --enable=similarities". If you want to run only the classes checker, but have
+# no Warning level messages displayed, use "--disable=all --enable=classes
+# --disable=W".
+disable = [
+    "raw-checker-failed", "bad-inline-option", "locally-disabled", "file-ignored", "suppressed-message",
+    "useless-suppression", "deprecated-pragma", "use-symbolic-message-instead",
+    "missing-module-docstring", "missing-function-docstring", "logging-fstring-interpolation",
+    "similarities",
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules --no-cov-on-fail --cov-report term-missing:skip-covered"
+
+[tool.coverage.run]
+omit = [
+    "*/__main__.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+]
