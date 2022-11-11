@@ -15,6 +15,9 @@ Vulnerability reports are sourced from Python Packaging Advisory Database (https
 ## Installation
 
 Please follow poetry [Using Plugins](https://python-poetry.org/docs/plugins/#using-plugins) for installation.
+```
+% poetry self add ko-poetry-audit-plugin
+```
 
 ## Usage
 
