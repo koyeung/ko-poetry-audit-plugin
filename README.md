@@ -59,6 +59,7 @@ dev      py      1.11.0     PYSEC-2022-42969                                  ht
 ## Exit codes
 `poetry audit` exits with non-zero code, unless all vulnerabilities found have been withdrawn.
 
+**Note** only packages found on `pypi` could be checked.
 
 ## Licensing
 `poetry audit` plugin is licensed under the Apache 2.0 License.
