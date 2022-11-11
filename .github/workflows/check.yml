@@ -33,13 +33,6 @@ jobs:
 
       - run: pip install tox poetry pre-commit
 
-      - name: Generate requirements.txt for pip-audit
-        run: poetry export -f requirements.txt --with dev --output requirements.txt
-      - uses: pypa/gh-action-pip-audit@v1.0.1
-        with:
-          inputs: requirements.txt
-          require-hashes: true
-
       - name: Show versions
         run: |
           uname -a
