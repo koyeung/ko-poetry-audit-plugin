@@ -5,9 +5,13 @@ from typing import Any, Iterable
 
 import httpx
 
+from ko_poetry_audit_plugin import __version__
+
 from .packages import Package, PypiPackage, VulnerablePackage
 
 LOGGER = logging.getLogger(__name__)
+
+_USER_AGENT = f"{__package__}/{__version__}"
 
 
 async def _get_package_metadata(
@@ -26,8 +30,10 @@ async def _get_package_metadata(
 
 async def _get_packages_metadata(packages: Iterable[Package]) -> list[PypiPackage]:
 
+    headers = {"user-agent": _USER_AGENT}
+
     async with httpx.AsyncClient(
-        base_url="https://pypi.org/pypi", http2=True
+        base_url="https://pypi.org/pypi", headers=headers, http2=True
     ) as client:
         coros = [
             asyncio.create_task(
