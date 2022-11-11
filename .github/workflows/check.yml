@@ -1,0 +1,128 @@
+name: Check
+
+on: [push]
+
+jobs:
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - run: echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
+        # no hardcode os-specific path
+        id: pip-cache-dir
+      - name: pip cache
+        id: pip-cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pip-cache-dir.outputs.dir }}
+          key: pip-${{ github.job }}-${{ hashFiles('poetry.lock') }}
+          restore-keys: pip-${{ github.job }}
+
+      - name: pre-commit cache
+        id: pre-commit-cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-${{ hashFiles('**/.pre-commit-config.yaml') }}
+          restore-keys: pre-commit-
+
+      - run: pip install tox poetry pre-commit
+
+      - name: Show versions
+        run: |
+          uname -a
+          python3 --version
+          echo "tox: $(tox --version)"
+          poetry --version
+
+      - name: tox dir
+        id: tox-dir
+        uses: actions/cache@v3
+        with:
+          path: .tox
+          key: tox-${{ github.job }}-${{ hashFiles('poetry.lock', 'tox.ini') }}
+          restore-keys: tox-${{ github.job }}-
+      - run: tox -e lint
+
+  tests:
+    needs: lint
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python-version: ["3.10", "3.11"]
+        include:
+          - os: macos-12
+            python-version: "3.11"
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - run: echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
+        # no hardcode os-specific path
+        id: pip-cache-dir
+      - name: pip cache
+        id: pip-cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pip-cache-dir.outputs.dir }}
+          key: pip-${{ github.job }}-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('poetry.lock') }}
+          restore-keys: pip-${{ github.job }}-${{ matrix.os }}-${{ matrix.python-version }}-
+
+      - run: pip install tox poetry
+
+      - name: Show versions
+        run: |
+          uname -a
+          python3 --version
+          echo "tox: $(tox --version)"
+          poetry --version
+
+      - name: tox dir
+        id: tox-dir
+        uses: actions/cache@v3
+        with:
+          path: .tox
+          key: tox-${{ github.job }}-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('poetry.lock', 'tox.ini') }}
+          restore-keys: tox-${{ github.job }}-${{ matrix.os }}-${{ matrix.python-version }}-
+      - run: tox -e tests
+        # Run tox using py: The current Python version tox is using
+
+  build:
+    needs: tests
+    name: Build distribution packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - run: echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
+        # no hardcode os-specific path
+        id: pip-cache-dir
+      - name: pip cache
+        id: pip-cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pip-cache-dir.outputs.dir }}
+          key: pip-${{ github.job }}-${{ hashFiles('pyproject.toml') }}
+          restore-keys: pip-${{ github.job }}-
+
+      - run: pip install build
+
+      - name: Show versions
+        run: |
+          uname -a
+          python3 --version
+          python3 -m build --version
+
+      - run: python3 -m build
