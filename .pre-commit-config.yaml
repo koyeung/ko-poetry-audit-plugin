@@ -34,6 +34,7 @@ repos:
     rev: v0.982
     hooks:
       - id: mypy
+        additional_dependencies: [types-tabulate]
   - repo: local
     # see https://pylint.pycqa.org/en/latest/user_guide/installation/pre-commit-integration.html
     hooks:
