@@ -3,6 +3,8 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+### Add
+* update `README.md` on setup as pre-commit hook.
 
 ## [0.3.0] - 2022-11-11
 ### Add

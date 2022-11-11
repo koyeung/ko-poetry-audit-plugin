@@ -19,6 +19,17 @@ Please follow poetry [Using Plugins](https://python-poetry.org/docs/plugins/#usi
 % poetry self add ko-poetry-audit-plugin
 ```
 
+To integrate with run from [`pre-commit`](https://pre-commit.com):
+```yaml
+  - repo: https://github.com/koyeung/ko-poetry-audit-plugin.git
+    rev: 0.3.0
+    hooks:
+      - id: poetry-audit
+```
+
+**Note** by default, it scans for `main` and `dev` dependencies groups.
+
+
 ## Usage
 
 To check for `main` group:
