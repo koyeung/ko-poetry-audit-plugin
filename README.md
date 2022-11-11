@@ -1,5 +1,11 @@
 # ko-poetry-audit-plugin
 
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![formatter](https://img.shields.io/badge/%20formatter-docformatter-fedcba.svg)](https://github.com/PyCQA/docformatter)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/PyCQA/pylint)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+
 To check known vulnerabilities from `poetry.lock`.
 
 Inspired by [pypa/pip-audit](https://github.com/pypa/pip-audit), this adds `audit` command tip [`poetry`](https://python-poetry.org/docs/), for checking vulnerabilities of packages found in `poetry.lock`.
@@ -53,6 +59,7 @@ dev      py      1.11.0     PYSEC-2022-42969                                  ht
 ## Exit codes
 `poetry audit` exits with non-zero code, unless all vulnerabilities found have been withdrawn.
 
+**Note** only packages found on `pypi` could be checked.
 
 ## Licensing
 `poetry audit` plugin is licensed under the Apache 2.0 License.
