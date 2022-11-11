@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Add
 * initial project setup
+* implement `audit` command
 
 
 [Unreleased]: https://github.com/koyeung/py-frontmatter/compare/main...HEAD
