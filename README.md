@@ -19,7 +19,7 @@ Please follow poetry [Using Plugins](https://python-poetry.org/docs/plugins/#usi
 % poetry self add ko-poetry-audit-plugin
 ```
 
-To integrate with run from [`pre-commit`](https://pre-commit.com):
+To integrate with [`pre-commit`](https://pre-commit.com), trigger scan whenever `poetry.lock` is commit:
 ```yaml
   - repo: https://github.com/koyeung/ko-poetry-audit-plugin.git
     rev: 0.3.0
@@ -27,7 +27,7 @@ To integrate with run from [`pre-commit`](https://pre-commit.com):
       - id: poetry-audit
 ```
 
-**Note** by default, it scans for `main` and `dev` dependencies groups.
+**Note** by default, it scans for `main` and `dev` dependencies groups only.
 
 
 ## Usage
