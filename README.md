@@ -19,7 +19,7 @@ Please follow poetry [Using Plugins](https://python-poetry.org/docs/plugins/#usi
 % poetry self add ko-poetry-audit-plugin
 ```
 
-To integrate with run from [`pre-commit`](https://pre-commit.com):
+To integrate with [`pre-commit`](https://pre-commit.com), trigger scan whenever `poetry.lock` is commit:
 ```yaml
   - repo: https://github.com/koyeung/ko-poetry-audit-plugin.git
     rev: 0.3.0
@@ -27,7 +27,7 @@ To integrate with run from [`pre-commit`](https://pre-commit.com):
       - id: poetry-audit
 ```
 
-**Note** by default, it scans for `main` and `dev` dependencies groups.
+**Note** by default, it scans for `main` and `dev` dependencies groups only.
 
 
 ## Usage
@@ -54,15 +54,15 @@ dev      py      1.11.0     PYSEC-2022-42969                                  ht
 To show more details:
 ```
 % poetry audit --with dev -vv
-[ko_poetry_audit_plugin.auditor] get packages of dependencies groups={'dev', 'main'} from lock
-[ko_poetry_audit_plugin.pypi_warehouse] no vulnerabilities found for package.name='boto3', package.version='1.26.7'
-[ko_poetry_audit_plugin.pypi_warehouse] no vulnerabilities found for package.name='jmespath', package.version='1.0.1'
-[ko_poetry_audit_plugin.pypi_warehouse] vulnerabilities found for package.name='py', package.version='1.11.0'
-[ko_poetry_audit_plugin.pypi_warehouse] no vulnerabilities found for package.name='s3transfer', package.version='0.6.0'
-[ko_poetry_audit_plugin.pypi_warehouse] no vulnerabilities found for package.name='six', package.version='1.16.0'
-[ko_poetry_audit_plugin.pypi_warehouse] no vulnerabilities found for package.name='botocore', package.version='1.29.7'
-[ko_poetry_audit_plugin.pypi_warehouse] no vulnerabilities found for package.name='python-dateutil', package.version='2.8.2'
-[ko_poetry_audit_plugin.pypi_warehouse] no vulnerabilities found for package.name='urllib3', package.version='1.26.12'
+[ko_poetry_audit_plugin.auditor] get packages list from dependencies groups={'main', 'dev'}
+[ko_poetry_audit_plugin.pypi_warehouse] package.name='boto3', package.version='1.26.8': no vulnerabilities found
+[ko_poetry_audit_plugin.pypi_warehouse] package.name='jmespath', package.version='1.0.1': no vulnerabilities found
+[ko_poetry_audit_plugin.pypi_warehouse] package.name='botocore', package.version='1.29.8': no vulnerabilities found
+[ko_poetry_audit_plugin.pypi_warehouse] package.name='six', package.version='1.16.0': no vulnerabilities found
+[ko_poetry_audit_plugin.pypi_warehouse] package.name='python-dateutil', package.version='2.8.2': no vulnerabilities found
+[ko_poetry_audit_plugin.pypi_warehouse] package.name='s3transfer', package.version='0.6.0': no vulnerabilities found
+[ko_poetry_audit_plugin.pypi_warehouse] package.name='py', package.version='1.11.0': vulnerabilities found
+[ko_poetry_audit_plugin.pypi_warehouse] package.name='urllib3', package.version='1.26.12': no vulnerabilities found
 Found vulnerabilities
 Group    Name    Version    ID                   Withdrawn    Fix Versions    Link
 -------  ------  ---------  -------------------  -----------  --------------  -------------------------------------------------

@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 * `.pre-commit-hooks.yaml` - pass `-vv` to `args`
+* log message if package/version are skipped.
 
 ## [0.4.0] - 2022-11-11
 ### Add
