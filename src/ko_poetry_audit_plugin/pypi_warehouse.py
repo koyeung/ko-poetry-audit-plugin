@@ -69,11 +69,11 @@ def get_vulnerable_packages(
 
         if not (vulnerabilities := package.metadata["vulnerabilities"]):
             LOGGER.info(
-                f"no vulnerabilities found for {package.name=}, {package.version=}"
+                f"{package.name=}, {package.version=}: no vulnerabilities found"
             )
             continue
 
-        LOGGER.info(f"vulnerabilities found for {package.name=}, {package.version=}")
+        LOGGER.warning(f"{package.name=}, {package.version=}: vulnerabilities found")
         result.append(
             VulnerablePackage(
                 name=package.name,

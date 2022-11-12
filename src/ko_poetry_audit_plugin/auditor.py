@@ -81,24 +81,29 @@ def get_locked_packages(
 
     Package with source type defined would be ignored.
     """
-    LOGGER.info(f"get packages of dependencies {groups=} from lock")
+    LOGGER.info(f"get packages list from dependencies {groups=}")
 
     packages = {}
     for locked_package in locked_repo.packages:
-        if not locked_package.category in groups:
+
+        name = locked_package.name
+        version = str(locked_package.version)
+        group = locked_package.category
+
+        if not group in groups:
+            LOGGER.warning(f"packages {name=}, {version=} in {group=} skipped")
             continue
 
         name = locked_package.name
         version = str(locked_package.version)
-
         if locked_package.source_type is not None:
             LOGGER.warning(
-                f"ignore packages {name=}, {version=} of {locked_package.source_type=}"
+                f"packages {name=}, {version=} of {locked_package.source_type=} skipped"
             )
             continue
 
         packages[Package(name=name, version=version)] = PoetryPackage(
-            name=name, version=version, category=locked_package.category
+            name=name, version=version, category=group
         )
 
     return packages
