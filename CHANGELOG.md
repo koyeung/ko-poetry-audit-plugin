@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+* `.pre-commit-hooks.yaml` - pass `-vv` to `args`
+
 ## [0.4.0] - 2022-11-11
 ### Add
 * update `README.md` on setup as pre-commit hook.
