@@ -3,6 +3,8 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+### Changed
+* add tox-ini-fmt to `pre-commit` config
 
 ## [0.5.0] - 2022-11-12
 ### Changed
