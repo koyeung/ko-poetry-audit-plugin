@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.6.0a2] - 2022-11-13
+### Changed
+* revise readme
+
 ## [0.6.0a1] - 2022-11-13
 ### Changed
 * add Python 3.9 support
@@ -33,6 +37,7 @@ All notable changes to this project will be documented in this file.
 
 
 [Unreleased]: https://github.com/koyeung/ko-poetry-audit-plugin/compare/main...HEAD
+[0.6.0a2]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.6.0a2
 [0.6.0a1]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.6.0a1
 [0.6.0a0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.6.0a0
 [0.5.0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.5.0
