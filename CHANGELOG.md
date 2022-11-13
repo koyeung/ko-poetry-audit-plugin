@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+* revise readme
+
 ## [0.6.0a1] - 2022-11-13
 ### Changed
 * add Python 3.9 support
