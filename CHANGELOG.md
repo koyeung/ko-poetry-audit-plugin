@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+### Changed
+* revise readme
+* remove pre-commit ci config
 
 ## [0.6.0a2] - 2022-11-13
 ### Changed
