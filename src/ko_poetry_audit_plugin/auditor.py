@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import logging
-from typing import TYPE_CHECKING, Container, Iterable
+from typing import TYPE_CHECKING, Container, Iterable, Union
 
 from cleo.io.io import IO
 from poetry.core.packages.dependency_group import MAIN_GROUP
@@ -36,7 +36,7 @@ class Auditor:
 
         return self
 
-    def audit(self, cwd: Path, output: IO | str) -> bool:
+    def audit(self, cwd: Path, output: Union[IO, str]) -> bool:
         """Perform audit.
 
         :return: `True` if no known vulnerabilities left.
