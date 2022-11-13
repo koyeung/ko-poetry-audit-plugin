@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "ko-poetry-audit-plugin"
-version = "0.6.0a0"
+version = "0.6.0a1"
 description = "Poetry plugin to check known vulnerabilities from poetry.lock"
 authors = ["YEUNG King On <koyeung@gmail.com>"]
 license = "Apache-2.0"
@@ -12,7 +12,7 @@ readme = "README.md"
 packages = [{include = "ko_poetry_audit_plugin", from = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9"
 poetry = "^1.2.2"
 httpx = {extras = ["http2"], version = "^0.23.0"}
 tabulate = "^0.9.0"

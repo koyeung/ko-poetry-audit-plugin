@@ -1,4 +1,4 @@
-from typing import NamedTuple
+from typing import NamedTuple, Optional
 
 
 class Package(NamedTuple):
@@ -21,7 +21,7 @@ class PypiPackage(NamedTuple):
 
     name: str
     version: str
-    metadata: dict | None
+    metadata: Optional[dict]
 
 
 class VulnerablePackage(NamedTuple):
@@ -48,4 +48,4 @@ class Vulnerability(NamedTuple):
     details: str
     link: str
     fixed_in: str
-    withdrawn: str | None
+    withdrawn: Optional[str]

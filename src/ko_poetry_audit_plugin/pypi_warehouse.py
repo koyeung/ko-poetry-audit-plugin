@@ -1,7 +1,7 @@
 import asyncio
 import logging
 from http import HTTPStatus
-from typing import Any, Iterable
+from typing import Any, Iterable, Optional
 
 import httpx
 
@@ -16,7 +16,7 @@ _USER_AGENT = f"{__package__}/{__version__}"
 
 async def _get_package_metadata(
     name: str, version: str, client: httpx.AsyncClient
-) -> tuple[str, str, Any | None]:
+) -> tuple[str, str, Optional[Any]]:
 
     uri = f"/{name}/{version}/json"
     response = await client.get(uri)
