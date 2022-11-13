@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "ko-poetry-audit-plugin"
-version = "0.5.0"
+version = "0.6.0a0"
 description = "Poetry plugin to check known vulnerabilities from poetry.lock"
 authors = ["YEUNG King On <koyeung@gmail.com>"]
 license = "Apache-2.0"
