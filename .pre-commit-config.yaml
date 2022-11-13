@@ -1,8 +1,11 @@
 ci:
   autoupdate_branch: 'develop'
 
-  # skip hooks from local repo
-  skip: [pylint]
+  skip:
+    # skip hooks from local repo
+    - pylint
+    # skip hooks require network access
+    - poetry-audit
 
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
@@ -43,6 +46,10 @@ repos:
         entry: pylint
         language: system
         types: [python]
+  - repo: https://github.com/koyeung/ko-poetry-audit-plugin.git
+    rev: 0.5.0
+    hooks:
+      - id: poetry-audit
   - repo: https://github.com/pypa/pip-audit
     rev: v2.4.5
     hooks:

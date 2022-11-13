@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 ### Changed
 * add tox-ini-fmt to `pre-commit` config
+* `.pre-commit-config.yaml` - add hook `poetry-audit`
 
 ## [0.5.0] - 2022-11-12
 ### Changed

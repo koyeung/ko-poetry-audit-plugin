@@ -48,6 +48,10 @@ jobs:
           key: tox-${{ github.job }}-${{ hashFiles('poetry.lock', 'tox.ini') }}
           restore-keys: tox-${{ github.job }}-
       - run: tox -e lint
+        env:
+          # avoid blocking workflow and release if failing poetry audit;
+          # dependabot should raise alert already
+          SKIP: poetry-audit
 
   tests:
     needs: lint
