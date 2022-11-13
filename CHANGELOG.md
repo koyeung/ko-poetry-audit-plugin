@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+
+
+## [0.6.0a0] - 2022-11-13
 ### Changed
 * add tox-ini-fmt to `pre-commit` config
 * `.pre-commit-config.yaml` - add hook `poetry-audit`
@@ -27,6 +30,7 @@ All notable changes to this project will be documented in this file.
 
 
 [Unreleased]: https://github.com/koyeung/ko-poetry-audit-plugin/compare/main...HEAD
+[0.6.0a0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.6.0a0
 [0.5.0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.5.0
 [0.4.0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.4.0
 [0.3.0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.3.0
