@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.7.0a0] - 2022-11-14
+### Changed
+* reduce relying on `pre-commit` in ci.
+
 ## [0.6.0] - 2022-11-14
 ### Changed
 * revise readme
@@ -32,6 +36,7 @@ All notable changes to this project will be documented in this file.
 
 
 [Unreleased]: https://github.com/koyeung/ko-poetry-audit-plugin/compare/main...HEAD
+[0.7.0a0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.7.0a0
 [0.6.0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.6.0
 [0.5.0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.5.0
 [0.4.0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.4.0
