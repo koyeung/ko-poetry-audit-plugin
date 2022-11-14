@@ -21,7 +21,7 @@ Please follow poetry [Using Plugins](https://python-poetry.org/docs/plugins/#usi
 To integrate with [`pre-commit`](https://pre-commit.com), trigger scan whenever `poetry.lock` is commit:
 ```yaml
   - repo: https://github.com/koyeung/ko-poetry-audit-plugin.git
-    rev: 0.5.0
+    rev: 0.6.0
     hooks:
       - id: poetry-audit
 ```
