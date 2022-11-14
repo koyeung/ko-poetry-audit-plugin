@@ -40,6 +40,8 @@ jobs:
           echo "tox: $(tox --version)"
           poetry --version
 
+      - uses: isort/isort-action@v1
+      - uses: psf/black@stable
       - name: tox dir
         id: tox-dir
         uses: actions/cache@v3
@@ -51,7 +53,7 @@ jobs:
         env:
           # avoid blocking workflow and release if failing poetry audit;
           # dependabot should raise alert already
-          SKIP: poetry-audit
+          SKIP: black,isort,poetry-audit
 
   tests:
     needs: lint

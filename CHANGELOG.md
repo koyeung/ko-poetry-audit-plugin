@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+* reduce relying on `pre-commit` in ci.
+
 ## [0.6.0] - 2022-11-14
 ### Changed
 * revise readme
