@@ -3,6 +3,8 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+### Changed
+* adapt to tox 4
 
 ## [0.7.0a0] - 2022-11-14
 ### Changed

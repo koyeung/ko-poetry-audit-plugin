@@ -49,7 +49,7 @@ jobs:
           path: .tox
           key: tox-${{ github.job }}-${{ hashFiles('poetry.lock', 'tox.ini') }}
           restore-keys: tox-${{ github.job }}-
-      - run: tox -e lint
+      - run: tox run -e lint
         env:
           # avoid blocking workflow and release if failing poetry audit;
           # dependabot should raise alert already
@@ -99,7 +99,7 @@ jobs:
           path: .tox
           key: tox-${{ github.job }}-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('poetry.lock', 'tox.ini') }}
           restore-keys: tox-${{ github.job }}-${{ matrix.os }}-${{ matrix.python-version }}-
-      - run: tox -e tests
+      - run: tox run -e tests
         # Run tox using py: The current Python version tox is using
 
   build:
