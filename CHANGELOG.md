@@ -3,6 +3,8 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+### Changed
+* update dependencies with poetry 1.3.0
 
 ## [0.7.0a1] - 2022-12-10
 ### Changed
