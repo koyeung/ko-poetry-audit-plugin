@@ -3,6 +3,8 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+
+## [0.7.0a3] - 2022-12-10
 ### Changed
 * update dependencies with poetry 1.3.0
 
@@ -42,6 +44,7 @@ All notable changes to this project will be documented in this file.
 
 
 [Unreleased]: https://github.com/koyeung/ko-poetry-audit-plugin/compare/main...HEAD
+[0.7.0a3]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.7.0a3
 [0.7.0a1]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.7.0a1
 [0.7.0a0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.7.0a0
 [0.6.0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.6.0
