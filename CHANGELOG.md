@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+### Changed
+* update dependencies versions
+* no auto run of docformatter by pre-commit
 
 ## [0.7.0] - 2022-12-10
 ### Changed
