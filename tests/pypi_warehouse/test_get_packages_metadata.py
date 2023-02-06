@@ -9,7 +9,6 @@ from ko_poetry_audit_plugin.pypi_warehouse import _get_packages_metadata
     "sampleproject_response", "django_response", "no_such_package_response"
 )
 async def test_get_packages_metadata():
-
     sampleproject = Package(name="sampleproject", version="1.0.0")
     django = Package(name="Django", version="3.0.2")
     no_such_package = Package(name="no_such_package", version="1.0.0")

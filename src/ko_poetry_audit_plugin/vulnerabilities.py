@@ -27,7 +27,6 @@ def get_vulnerabilities(
     """Combine fields from each vulnerablity and poetry dependency group."""
     vulnerabilities = []
     for vulnerable in vulnerable_packages:
-
         package_name = vulnerable.name
         package_version = vulnerable.version
         package = Package(name=package_name, version=package_version)
