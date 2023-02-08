@@ -25,7 +25,6 @@ class AuditCommand(GroupCommand):
         return {MAIN_GROUP}
 
     def handle(self) -> int:
-
         output = self.option("output")
 
         auditor = Auditor(self.poetry, self.io)

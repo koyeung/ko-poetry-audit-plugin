@@ -17,7 +17,6 @@ _USER_AGENT = f"{__package__}/{__version__}"
 async def _get_package_metadata(
     name: str, version: str, client: httpx.AsyncClient
 ) -> tuple[str, str, Optional[Any]]:
-
     uri = f"/{name}/{version}/json"
     response = await client.get(uri)
 
@@ -29,7 +28,6 @@ async def _get_package_metadata(
 
 
 async def _get_packages_metadata(packages: Iterable[Package]) -> list[PypiPackage]:
-
     headers = {"user-agent": _USER_AGENT}
 
     async with httpx.AsyncClient(
@@ -55,13 +53,11 @@ async def _get_packages_metadata(packages: Iterable[Package]) -> list[PypiPackag
 def get_vulnerable_packages(
     packages: Iterable[Package],
 ) -> list[VulnerablePackage]:
-
     metadata = asyncio.run(_get_packages_metadata(packages))
 
     # packages contains vulnerabilities
     result = []
     for package in metadata:
-
         if package.metadata is None:
             raise RuntimeError(
                 f"failed to fetch info from pypi: {package.name=}, {package.version=}"

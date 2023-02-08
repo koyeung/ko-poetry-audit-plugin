@@ -85,7 +85,6 @@ def get_locked_packages(
 
     packages = {}
     for locked_package in locked_repo.packages:
-
         name = locked_package.name
         version = str(locked_package.version)
         group = locked_package.category
