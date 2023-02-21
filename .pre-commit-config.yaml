@@ -21,12 +21,12 @@ repos:
     hooks:
       - id: isort
   - repo: https://github.com/PyCQA/docformatter.git
-    rev: v1.6.0.rc1
+    rev: v1.5.1
     hooks:
       - id: docformatter
         stages: [manual]
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.991
+    rev: v1.0.1
     hooks:
       - id: mypy
         additional_dependencies: [types-tabulate]
