@@ -21,7 +21,7 @@ tabulate = "^0.9.0"
 pylint = "^2.15.5"
 pytest = "^7.2.0"
 pytest-cov = "^4.0.0"
-coverage = {extras = ["toml"], version = "^6.5.0"}
+coverage = {extras = ["toml"], version = ">=6.5,<8.0"}
 pytest-httpx = "^0.21.2"
 pytest-asyncio = "^0.20.1"
 
