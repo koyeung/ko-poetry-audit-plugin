@@ -61,9 +61,6 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest]
         python-version: ["3.9", "3.10", "3.11"]
-        include:
-          - os: macos-12
-            python-version: "3.11"
 
     runs-on: ${{ matrix.os }}
     steps:
