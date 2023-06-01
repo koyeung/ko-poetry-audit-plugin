@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.8.0a0] - 2023-06-01
+### Changed
+* update dependencies versions
+* no auto run of docformatter by pre-commit
+
 ## [0.7.0] - 2022-12-10
 ### Changed
 * update dependencies with poetry 1.3.0
@@ -38,6 +43,7 @@ All notable changes to this project will be documented in this file.
 
 
 [Unreleased]: https://github.com/koyeung/ko-poetry-audit-plugin/compare/main...HEAD
+[0.8.0a0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.8.0a0
 [0.7.0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.7.0
 [0.6.0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.6.0
 [0.5.0]: https://github.com/koyeung/ko-poetry-audit-plugin/releases/tag/0.5.0
