@@ -89,7 +89,7 @@ def get_locked_packages(
         version = str(locked_package.version)
         group = locked_package.category
 
-        if not group in groups:
+        if group not in groups:
             LOGGER.warning(f"packages {name=}, {version=} in {group=} skipped")
             continue
 
