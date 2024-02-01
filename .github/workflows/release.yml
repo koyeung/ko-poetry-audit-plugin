@@ -20,7 +20,7 @@ jobs:
         id: pip-cache-dir
       - name: pip cache
         id: pip-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ steps.pip-cache-dir.outputs.dir }}
           key: pip-${{ github.job }}-${{ hashFiles('pyproject.toml') }}
